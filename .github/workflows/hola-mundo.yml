@@ -1,0 +1,18 @@
+name: Hola Mundo Typescript
+on:
+  push:
+    branches: [ "aprendiendo-github-actions" ]
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout of the source code
+        uses: actions/checkout@v3
+
+      - name: Node.js configuration
+        uses: actions/setup-node@v2
+        with:
+          node-version: 14
+
+      - name: execute the script
+        run: GitHubActions/holaMundo.ts
